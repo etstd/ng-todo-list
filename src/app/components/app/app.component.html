@@ -1,0 +1,64 @@
+<div class="application">
+
+  <header class="application__header">
+    {{ title }}
+  </header>
+
+  <main class="application__workspace">
+
+    <div class="application__todolist">
+      <ul class="todolist" *ngIf="todos.length > 0">
+
+        <li class="todolist__todoitem" *ngFor="let todo of todos; let i = index">
+
+          <div class="todoitem__toogle">
+            <!-- <i class="material-icons" *ngIf="!todo.completed"> check_box_outline_blank </i>
+            <i class="material-icons" *ngIf="todo.completed"> check_box </i> -->
+
+            <!-- <i class="material-icons" [innerText]="todo.completed ? 'check_box' : 'check_box_outline_blank'"></i> -->
+            <!-- <i class="material-icons" [textContent]="todo.completed ? 'check_box' : 'check_box_outline_blank'"></i> -->
+
+            <i class="material-icons" (click)="toggle(todo)">
+              {{ todo.completed ? 'check_box' : 'check_box_outline_blank' }}
+            </i>
+          </div>
+
+          <!-- <div class="todoitem__title" [ngClass]="{ 'todoitem__title--completed': todo.completed }"> -->
+          <div class="todoitem__title" [class.todoitem__title--completed]="todo.completed">
+            {{ todo.title.concat(" #", i) }}
+          </div>
+
+          <span class="todoitem__delete material-icons" (click)="delete(todo)">
+            delete
+          </span>
+        </li>
+      </ul>
+
+      <div *ngIf="todos.length === 0">
+        List is empty. Create new Task
+      </div>
+
+    </div>
+
+    <div class="application__todoview">
+
+      <div class="todoview__add-new-task">
+
+        <form action="" class="add-new-task--title-input" (ngSubmit)="create(); todoForm.reset() " #todoForm="ngForm">
+          <header>
+            <input type="text" [(ngModel)]="newTodoTitle" name="todoTitle" placeholder="Title for new task:" #titleValue required>
+            <button type="submit" [disabled]="todoForm.form.invalid">
+              <i class="material-icons"> create </i>
+            </button>
+          </header>
+
+          <textarea></textarea>
+        </form>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
