@@ -1,6 +1,6 @@
-<form action="" class="add-new-task--title-input" (ngSubmit)="create(); todoForm.reset() " #todoForm="ngForm">
+<form action="" class="add-new-task--title-input" (ngSubmit)="onSubmit(); todoForm.reset() " #todoForm="ngForm">
   <header>
-    <input type="text" [(ngModel)]="newTodoTitle" name="todoTitle" placeholder="Title for new task:" #titleValue required>
+    <input type="text" [(ngModel)]="title" name="todoTitle" placeholder="Title for new task:" #titleValue required>
     <button type="submit" [disabled]="todoForm.form.invalid">
       <i class="material-icons"> create </i>
     </button>

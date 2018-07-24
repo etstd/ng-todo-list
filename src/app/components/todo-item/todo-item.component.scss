@@ -1,0 +1,29 @@
+$primaryBackgroundColor: #111;
+$primaryTextColor: #FFF;
+
+// TODOITEM
+.todoitem__toogle{
+  color: $primaryBackgroundColor;
+  cursor: pointer;
+  justify-self: center;
+}
+
+.todoitem__title{
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.todoitem__title--completed{
+  text-decoration: line-through
+}
+
+.todoitem__delete {
+  color: $primaryBackgroundColor;
+  justify-self: center;
+  cursor: pointer;
+}
+
+// WRAPPER todoview FOR add-new-task
+.todoview__add-new-task{
+  display: grid;
+}
