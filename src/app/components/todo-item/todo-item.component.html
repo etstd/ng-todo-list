@@ -12,7 +12,7 @@
 
 <!-- <div class="todoitem__title" [ngClass]="{ 'todoitem__title--completed': todo.completed }"> -->
 <div class="todoitem__title" [class.todoitem__title--completed]="todo.completed">
-  {{ todo.title.concat(" # ", i) }}
+  {{ todo.title.concat(" # ", todo.id) }}
 </div>
 
 <span class="todoitem__delete material-icons" (click)="onDelete(todo)">

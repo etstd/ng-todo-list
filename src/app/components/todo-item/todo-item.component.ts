@@ -9,7 +9,6 @@ import { Todo } from '../../shared/todo';
 })
 export class TodoItemComponent {
   @Input() todo: Todo;
-  @Input() i: number;
 
   @Output() delete = new EventEmitter();
   @Output() toggle = new EventEmitter();

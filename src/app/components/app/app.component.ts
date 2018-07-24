@@ -9,5 +9,5 @@ import { todos } from '../../shared/data';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title:string  = 'todo list';
+  title:string  = 'todo list'
 }
