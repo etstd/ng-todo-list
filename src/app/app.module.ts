@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './shared/data.service';
@@ -20,7 +22,7 @@ import { TodosComponent } from './components/todos/todos.component';
     AppComponent, TodoFormComponent, TodoListComponent, TodoItemComponent, TodosComponent
   ],
   imports: [
-    BrowserModule, FormsModule, HttpModule,
+    BrowserModule, HttpClientModule, FormsModule, //HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   providers: [
