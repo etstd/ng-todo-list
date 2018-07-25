@@ -1,16 +1,9 @@
 <div class="todoitem__toogle">
-  <!-- <i class="material-icons" *ngIf="!todo.completed"> check_box_outline_blank </i>
-      <i class="material-icons" *ngIf="todo.completed"> check_box </i> -->
-
-  <!-- <i class="material-icons" [innerText]="todo.completed ? 'check_box' : 'check_box_outline_blank'"></i> -->
-  <!-- <i class="material-icons" [textContent]="todo.completed ? 'check_box' : 'check_box_outline_blank'"></i> -->
-
   <i class="material-icons" (click)="onToggle()">
     {{ todo.completed ? 'check_box' : 'check_box_outline_blank' }}
   </i>
 </div>
 
-<!-- <div class="todoitem__title" [ngClass]="{ 'todoitem__title--completed': todo.completed }"> -->
 <div class="todoitem__title" [class.todoitem__title--completed]="todo.completed">
   {{ todo.title.concat(" # ", todo.id) }}
 </div>

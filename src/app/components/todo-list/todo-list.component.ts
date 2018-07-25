@@ -1,30 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { Todo } from '../../shared/todo';
-import { TodoService } from '../../services/todo/todo.service';
 
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss']
 })
-export class TodoListComponent implements OnInit{
-  todos: Todo[];
+export class TodoListComponent {
+  @Input() todos: Todo[];
 
-  constructor(private todoService:TodoService){ 
-    this.todos = [];
-  }
+  @Output() delete: EventEmitter<Todo> = new EventEmitter()
+  @Output() toggle: EventEmitter<Todo> = new EventEmitter()
 
-  ngOnInit(){
-    this.todoService.getTodos().then(todos => this.todos = todos);
-  }
 
-  toggle( todo: Todo ){
-    this.todoService.toggleTodo(todo)
+  onToggle( todo: Todo ){
+    this.toggle.emit(todo);
   };
-
-  delete( todo: Todo ){
-    this.todoService.deleteTodo(todo)
+  
+  onDelete( todo: Todo ){
+    this.delete.emit(todo);
   };
 
 }

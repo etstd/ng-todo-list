@@ -13,10 +13,11 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
 
 import { TodoService } from './services/todo/todo.service';
+import { TodosComponent } from './components/todos/todos.component';
 
 @NgModule({
   declarations: [
-    AppComponent, TodoFormComponent, TodoListComponent, TodoItemComponent
+    AppComponent, TodoFormComponent, TodoListComponent, TodoItemComponent, TodosComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpModule,

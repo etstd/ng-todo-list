@@ -16,7 +16,7 @@ export class TodoItemComponent {
   onToggle(){
     this.toggle.emit(this.todo);
   }
-
+  
   onDelete(){
     this.delete.emit(this.todo);
   }

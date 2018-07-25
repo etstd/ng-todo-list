@@ -1,0 +1,8 @@
+<div class="application__todolist">
+  <app-todo-list [todos]="todos" (delete)="delete($event)" (toggle)="toggle($event)">
+  </app-todo-list>
+</div>
+
+<div class="application__todoview">
+  <app-todo-form class="todoview__add-new-task" (create)="create($event)"></app-todo-form>
+</div>
