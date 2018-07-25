@@ -2,13 +2,13 @@ export const todos = [
   {
     id: 0,
     completed: false,
-    title: "Прочитать доки про RxJS"
+    title: "Прочитать доки про HTTP запросы Angular"
   },
   
   {
     id: 1,
     completed: false,
-    title: "Прочитать доки про HTTP запросы Angular"
+    title: "Прочитать доки про RxJS"
   },
 
   {

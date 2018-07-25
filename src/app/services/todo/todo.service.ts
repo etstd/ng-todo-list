@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 
-import 'rxjs';
+import { from } from 'rxjs';
 
 import { Todo } from '../../shared/todo';
 
@@ -13,12 +13,20 @@ export class TodoService {
 
   constructor(private http: Http){}
 
-  getTodos(): Promise<Todo[]> {  
-    return this.http.get(this.apiUrl)
-                    .toPromise()
-                    .then(res => res.json())
-                    .then(todos => this.todos = todos)
-                    .catch(this.handlerError)
+  log( data ): any{
+    console.log( data );
+  }
+
+  getTodos(): Promise<Todo[]> {
+    return from(this.http.get(this.apiUrl)).toPromise()
+                                          .then(res => res.json())
+                                          .then(todos => this.todos = todos)
+                                          .catch(this.handlerError)
+    // return this.http.get(this.apiUrl)
+    //                 .toPromise()
+    //                 .then(res => res.json())
+    //                 .then(todos => this.todos = todos)
+    //                 .catch(this.handlerError)
   }
 
   createTodo( title:string ){
@@ -27,7 +35,7 @@ export class TodoService {
           todo    = new Todo(title);
 
 
-    this.http.post(this.apiUrl, todo, options)
+    from(this.http.post(this.apiUrl, todo, options))
               .toPromise()
               .then(res => res.json())
               .then(todo => this.todos.push(todo))
@@ -38,7 +46,7 @@ export class TodoService {
     const headers = new Headers({ 'Content-Type': 'application/json' }),
           options = new RequestOptions({ headers });
 
-    this.http.delete(`${this.apiUrl}/${todo.id}`, options)
+    from(this.http.delete(`${this.apiUrl}/${todo.id}`, options))
             .toPromise()
             .then(res => {
               const i = this.todos.indexOf(todo);
@@ -55,7 +63,7 @@ export class TodoService {
     const headers = new Headers({ 'Content-Type': 'application/json' }),
           options = new RequestOptions({ headers });
 
-    this.http.put(`${this.apiUrl}/${todo.id}`, todo, options)
+    from(this.http.put(`${this.apiUrl}/${todo.id}`, todo, options))
             .toPromise()
             .then(res => {
               todo.completed = !todo.completed;
