@@ -6,15 +6,31 @@ $primaryTextColor: #FFF;
   padding: 10px;
   grid-template-rows: 64px 1fr;
   grid-gap: 25px;
+ 
+  input:hover {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  };
+
+  textarea:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
 
   input, textarea {
     background-color: #FFF;
     border: none;
     color: #111;
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+    // box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     padding: 15px;
     line-height: 32px;
     font-size: 20px;
+  }
+
+  textarea {
+    height: calc(100vh - 210px);
+    max-height: calc(100vh - 210px);
+    resize: vertical;
   }
 
   input:focus.ng-invalid.ng-dirty {
@@ -25,14 +41,22 @@ $primaryTextColor: #FFF;
     display: grid;
     grid-template-columns: 1fr 64px;
     grid-gap: 10px;
-    
+
+    button:hover {
+      box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+    };
+
+
     button {
       display: grid;
       align-items: center;
       justify-content: center;
-      color: $primaryTextColor;
-      background-color: $primaryBackgroundColor;
-      box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+      color: $primaryBackgroundColor;
+      background-color: $primaryTextColor;
+      // box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+      border-radius: 3px;
       cursor: pointer;
       border: none;
 

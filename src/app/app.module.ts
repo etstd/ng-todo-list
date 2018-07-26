@@ -16,10 +16,11 @@ import { TodoItemComponent } from './components/todo-item/todo-item.component';
 
 import { TodoService } from './services/todo/todo.service';
 import { TodosComponent } from './components/todos/todos.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
-    AppComponent, TodoFormComponent, TodoListComponent, TodoItemComponent, TodosComponent
+    AppComponent, TodoFormComponent, TodoListComponent, TodoItemComponent, TodosComponent, HeaderComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, //HttpModule,

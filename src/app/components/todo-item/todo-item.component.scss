@@ -1,7 +1,19 @@
 $primaryBackgroundColor: #111;
 $primaryTextColor: #FFF;
 
-// TODOITEM
+
+:host {
+  transition: all 0.4s cubic-bezier(.25,.8,.25,1);
+}
+
+:host:hover{
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+:host:hover .todoitem__delete {
+  opacity: 1;
+}
+
 .todoitem__toogle{
   color: $primaryBackgroundColor;
   cursor: pointer;
@@ -9,6 +21,9 @@ $primaryTextColor: #FFF;
 }
 
 .todoitem__title{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   line-height: 24px;
   cursor: pointer;
 }
@@ -18,12 +33,9 @@ $primaryTextColor: #FFF;
 }
 
 .todoitem__delete {
+  transition: all 0.4s cubic-bezier(.25,.8,.25,1);
+  opacity: 0;
   color: $primaryBackgroundColor;
   justify-self: center;
   cursor: pointer;
-}
-
-// WRAPPER todoview FOR add-new-task
-.todoview__add-new-task{
-  display: grid;
 }

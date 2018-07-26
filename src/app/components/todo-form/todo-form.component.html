@@ -1,10 +1,12 @@
 <form action="" class="add-new-task--title-input" (ngSubmit)="onSubmit(); todoForm.reset() " #todoForm="ngForm">
+
   <header>
-    <input type="text" [(ngModel)]="title" name="todoTitle" placeholder="Title for new task:" #titleValue required>
-    <button type="submit" [disabled]="todoForm.form.invalid">
+    <input type="text" [(ngModel)]="title" name="todoTitle" placeholder="Title for new task:" #titleValue required tabindex=1>
+    <button type="submit" [disabled]="todoForm.form.invalid" tabindex=3>
+      <i>create</i>
       <i class="material-icons"> create </i>
     </button>
   </header>
 
-  <textarea></textarea>
+  <textarea tabindex=2 placeholder="Enter description for task (unrequired field)"></textarea>
 </form>
