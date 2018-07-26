@@ -1,5 +1,13 @@
 # L1224
 
+## About project
+Only todo list
+
+## Status project
+active development
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 ## Development server
