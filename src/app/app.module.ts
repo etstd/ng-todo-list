@@ -17,10 +17,12 @@ import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { TodoService } from './services/todo/todo.service';
 import { TodosComponent } from './components/todos/todos.component';
 import { HeaderComponent } from './components/header/header.component';
+import { TodoViewComponent } from './components/todo-view/todo-view.component';
+import { ButtonAddTaskComponent } from './components/button-add-task/button-add-task.component';
 
 @NgModule({
   declarations: [
-    AppComponent, TodoFormComponent, TodoListComponent, TodoItemComponent, TodosComponent, HeaderComponent
+    AppComponent, TodoFormComponent, TodoListComponent, TodoItemComponent, TodosComponent, HeaderComponent, TodoViewComponent, ButtonAddTaskComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, //HttpModule,

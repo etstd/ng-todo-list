@@ -16,3 +16,10 @@ $primaryTextColor: #FFF;
   margin-bottom:5px;
   height: 64px;
 };
+
+.todolist--empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 155px;
+}

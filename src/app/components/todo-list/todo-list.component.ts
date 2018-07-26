@@ -12,6 +12,7 @@ export class TodoListComponent {
 
   @Output() delete: EventEmitter<Todo> = new EventEmitter()
   @Output() toggle: EventEmitter<Todo> = new EventEmitter()
+  @Output() select: EventEmitter<Todo> = new EventEmitter()
 
 
   onToggle( todo: Todo ){
@@ -20,6 +21,10 @@ export class TodoListComponent {
   
   onDelete( todo: Todo ){
     this.delete.emit(todo);
+  };
+
+  onSelect( todo: Todo ){
+    this.select.emit(todo);
   };
 
 }

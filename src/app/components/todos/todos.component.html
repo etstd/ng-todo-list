@@ -1,8 +1,15 @@
 <div class="application__todolist">
-  <app-todo-list [todos]="todos" (delete)="delete($event)" (toggle)="toggle($event)">
+  <app-todo-list [todos]="todos" (select)="onSelect($event)" (delete)="delete($event)" (toggle)="toggle($event)">
   </app-todo-list>
 </div>
 
 <div class="application__todoview">
-  <app-todo-form class="todoview__add-new-task" (create)="create($event)"></app-todo-form>
+  <app-todo-form class="todoview__add-new-task" (create)="create($event)" *ngIf="isOpenPageAddTask">
+  </app-todo-form>
+
+  <app-todo-view [todo]="todo" class="todoview__add-new-task" *ngIf="!isOpenPageAddTask">
+  </app-todo-view>
 </div>
+
+<app-button-add-task (onOpenTaskAddPage)="openTaskAddPage()" *ngIf="!isOpenPageAddTask">
+</app-button-add-task>

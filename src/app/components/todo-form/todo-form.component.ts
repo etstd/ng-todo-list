@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-
+import { Todo } from '../../shared/todo';
 
 @Component({
   selector: 'app-todo-form',
@@ -9,10 +9,12 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class TodoFormComponent {
 
   title: string = '';
-  @Output() create: EventEmitter<string> = new EventEmitter()
+  desc: string = '';
 
-  onSubmit( ){
-    this.create.emit(this.title)
+  @Output() create: EventEmitter<object> = new EventEmitter()
+
+  onSubmit(){
+    this.create.emit({ title: this.title, desc: this.desc });
   }
 
 }

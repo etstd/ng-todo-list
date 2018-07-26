@@ -4,7 +4,7 @@
   </i>
 </div>
 
-<div class="todoitem__title" [class.todoitem__title--completed]="todo.completed">
+<div class="todoitem__title" [class.todoitem__title--completed]="todo.completed" (click)="onSelect(todo)">
   {{ todo.title.concat(" # ", todo.id) }}
 </div>
 

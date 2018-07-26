@@ -1,0 +1,22 @@
+$primaryBackgroundColor: #111;
+$primaryTextColor: #fff;
+
+:host {
+  width: 64px;
+  height: 64px;
+  background-color: $primaryBackgroundColor;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $primaryTextColor;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(.25,.8,.25,1);
+};
+
+:host:hover{
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3), 0 3px 6px rgba(0,0,0,0.23);
+}

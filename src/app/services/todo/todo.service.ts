@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, } from '@angular/common/http';
 
 
-import { from, throwError, Observable } from 'rxjs';
-import { map, catchError } from 'rxjs/operators/';
+import { throwError, Observable } from 'rxjs';
+import { catchError } from 'rxjs/operators/';
 
 import { Todo } from '../../shared/todo';
 
@@ -21,10 +21,10 @@ export class TodoService {
     )
   }
 
-  createTodo( title:string ): Observable<any> {
+  createTodo( title:string, desc:string ): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' }),
           options = { headers },
-          todo    = new Todo(title);
+          todo    = new Todo(title, desc);
 
 
     return this.http.post(this.apiUrl, todo, options).pipe(

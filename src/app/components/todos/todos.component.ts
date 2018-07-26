@@ -10,7 +10,9 @@ import { TodoService } from '../../services/todo/todo.service';
 })
 export class TodosComponent implements OnInit{
   todos: Todo[];
-
+  todo: Todo;
+  isOpenPageAddTask: boolean;
+  
   constructor(private todoService:TodoService){ 
     this.todos = [];
   }
@@ -19,8 +21,16 @@ export class TodosComponent implements OnInit{
     this.todoService.getTodos().subscribe(todos => this.todos = todos);
   }
 
-  create(title: string){
-    this.todoService.createTodo(title).subscribe(todo => this.todos.push(todo));
+  openTaskAddPage(){
+    if( this.todo ){
+      this.todo = null;
+    };
+
+    this.isOpenPageAddTask = true;
+  }
+
+  create({ title, desc }: { title:string, desc:string } ){
+    this.todoService.createTodo(title, desc).subscribe(todo => this.todos.unshift(todo));
   }
 
   toggle( todo: Todo ){
@@ -31,6 +41,10 @@ export class TodosComponent implements OnInit{
 
   delete( todo: Todo ){
     this.todoService.deleteTodo(todo).subscribe(res => {
+      if( this.todo && this.todo.id === todo.id ){
+        this.todo = null;
+      };
+
       const i = this.todos.indexOf(todo);
             
       if( ~i ){
@@ -39,5 +53,9 @@ export class TodosComponent implements OnInit{
     })
   };
 
+  onSelect( todo: Todo ){
+    this.isOpenPageAddTask = false;
+    this.todo = todo;
+  }
 }
 

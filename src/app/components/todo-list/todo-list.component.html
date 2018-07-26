@@ -1,8 +1,9 @@
 <ul class="todolist" *ngIf="todos.length > 0">
-  <app-todo-item class="todolist__todoitem" *ngFor="let todo of todos;" [todo]="todo" (delete)="onDelete($event)" (toggle)="onToggle($event)">
+  <app-todo-item class="todolist__todoitem" *ngFor="let todo of todos;" [todo]="todo" (delete)="onDelete($event)" (toggle)="onToggle($event)"
+    (select)="onSelect($event)">
   </app-todo-item>
 </ul>
 
-<div *ngIf="todos.length === 0">
+<div class="todolist--empty" *ngIf="todos.length === 0">
   List is empty. Create new Task
 </div>

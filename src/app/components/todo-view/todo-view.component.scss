@@ -1,0 +1,27 @@
+$primaryBackgroundColor: #111;
+$primaryTextColor: #FFF;
+
+:host {
+  display: grid;
+  grid-gap: 10px;
+}
+
+.todo-view--title {
+  display: flex;
+  font-size: 20px;
+  margin: 25px;
+}
+
+.todo-view--description {
+  overflow-y: scroll;
+  height: calc(100vh - 210px);
+  max-height: calc(100vh - 210px);
+  padding: 10px;
+}
+
+.todo-view__empty{
+  margin-top: 150px;
+  display: grid;
+  justify-self: center;
+  align-self: center;
+}

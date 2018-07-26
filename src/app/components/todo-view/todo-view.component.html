@@ -1,0 +1,11 @@
+<div class="todo-view__empty" *ngIf="!todo">
+  Select task or create new task
+</div>
+
+<header *ngIf="todo" class="todo-view--title">
+  {{ todo.title }}
+</header>
+
+<div *ngIf="todo" class="todo-view--description">
+  {{ todo.desc ? todo.desc : "NO DESCRIPTION"}}
+</div>
